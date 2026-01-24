@@ -1,4 +1,4 @@
-// singleton -> Object.create()
+// singleton -> Object.create()  or new Object()
 
 // object literals
 
@@ -52,7 +52,6 @@ JsUser["email"]="hello@1231"
 JsUser[mykey1]=322
 console.log(JsUser["email"])
 console.log(JsUser[mykey1])
-
 
 JsUser.greeting2=function(){
     console.log(`Hello World ${this.username}`)
