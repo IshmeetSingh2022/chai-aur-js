@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // Parsing is the process where the browser reads a string, analyzes it as HTML, and converts it into DOM nodes. 
+    function addLanguage(LangName){
+        const li=document.createElement('li')
+        li.innerHTML=`${LangName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    function addoptimiseLanguage(LangName){
+        const li=document.createElement('li')
+        li.textContent=LangName
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('python')
+    addLanguage('Java')
+    addoptimiseLanguage('cpp')
+//   nth-child(n) → n-th child of parent (fragile)
+
+// nth-of-type(n) → n-th element of that tag (safe)
+
+// Prefer nth-of-type() in JS
+    // Edit
+    const secondLang=document.querySelector('li:nth-of-type(2)')
+    const li=document.createElement('li')
+    li.textContent='Ruby'
+    secondLang.replaceWith(li)
+
+    const firstLang=document.querySelector('li:nth-of-type(1)')
+    firstLang.outerHTML='<li>TypeScript</li>'
+    
+    // remove
+    const lastLang=document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>
