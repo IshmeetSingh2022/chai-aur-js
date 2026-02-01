@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+const sayIshmeet=(str)=>{
+    console.log(str,Date.now())
+}
+
+    const start=document.querySelector('#start')
+    const stop=document.querySelector('#stop')
+
+    let ref1=undefined
+    start.addEventListener('click',(e)=>{
+        ref1=setInterval(sayIshmeet,1000,'Ishmeet')
+    })
+  
+    
+    stop.addEventListener('click',()=>{
+        if(ref1){
+            clearInterval(ref1)
+            ref1=undefined
+        }
+        else{
+            alert('Use must click on start first')
+        }
+    })
+</script>
+</html>
